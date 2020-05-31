@@ -28,9 +28,9 @@ export default class ToDoItem extends Component {
         const {item} = this.props
         return(
             <View style={item.completed ? styles.completed : styles.default}>
-                <Text></Text>
-                <Button title="C" onPress={this.onCompleted}></Button>
-                <Button title="D" onPress={this.onDeleted}></Button>
+                <Text testID={item.completed?"completed":"uncompleted"}>{item.text}</Text>
+                <Button testID="completeButton" title="Complete" onPress={this.onCompleted}></Button>
+                <Button testID="deleteButton" title="Delete" onPress={this.onDeleted}></Button>
             </View>
         )
     }
